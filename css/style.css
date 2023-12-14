@@ -1,4 +1,63 @@
 .wrapper {
     width: 100%;
-    height: 100vh;
+    height: 100vh - 60px;
+    background-color: rgba(93, 59, 132);;
+}
+
+header {
+    height: 60px;
+    background-color: rgb(14, 36, 47);
+}
+
+.ms_card {
+    width: 24%;
+    height: 305px;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    padding: 2rem;
+    background-color: rgba(62, 40, 88, 0.9);
+    color: white;
+    cursor: pointer;
+}
+
+.ms_card-preview {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: rgba(62, 40, 88, 0.3);
+    color: white;
+}
+
+.ms_card li {
+    list-style-type: none;
+}
+
+.ms_card li h3 {
+    font-size: .9rem;
+}
+
+.ms_card li h4 {
+    font-size: .7rem;
+}
+
+.ms_card-preview li {
+    list-style-type: none;
+}
+
+.ms_card-preview li h3 {
+    font-size: 1.4rem;
+}
+
+.ms_card-preview li h4 {
+    font-size: 1.1rem;
+}
+
+
+.ms_container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(62, 40, 88, 0.8);
 }

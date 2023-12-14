@@ -19,21 +19,39 @@
 
     <div class="wrapper" id="app">
 
-        <div class="container">
-            <div class="row row-cols-3 g-5">
-                <div class="col" v-for="(disc, index) in discList" :key="index">
-                    <div class="card">
+        <header v-if="clicked === false">
+
+        </header>
+
+        <div class="container" v-if="clicked === false">
+            <div class="row row-cols-3 pt-3 justify-content-center align-items-center">
+                <div class="col ms_card justify-content-center align-items-center mx-2 my-3" v-for="(disc, index) in discList" :key="index" @click.once="handlePreview(index)">
 
                         <img :src="disc.poster" class="card-img-top" :alt="disc.title">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><h3>{{ disc.title }}</h3></li>
-                            <li class="list-group-item"><h4>{{ disc.author }}</h4></li>
-                            <li class="list-group-item">{{ disc.year }}</li>
+                        <ul class="ps-0 text-center">
+                            <li class="my-2"><h3>{{ disc.title }}</h3></li>
+                            <li class="my-2"><h4>{{ disc.author }}</h4></li>
+                            <li class="my-2">{{ disc.year }}</li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="ms_container text-center" v-else>
+
+                    <div class="ms_card-preview">
+
+                        <img :src="discList[activeDisc].poster" class="card-img-top" :alt="discList[activeDisc].title">
+                        <ul class="">
+                            <li class="my-4"><h3>{{ discList[activeDisc].title }}</h3></li>
+                            <li class="my-4"><h4>{{ discList[activeDisc].author }}</h4></li>
+                            <li class="my-4">{{ discList[activeDisc].year }}</li>
+                            <li class="my-4">{{ discList[activeDisc].genre }}</li>
                         </ul>
 
                     </div>
-                </div>
-            </div>
+
         </div>
 
     </div>

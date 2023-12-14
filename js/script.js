@@ -5,6 +5,8 @@ createApp({
         return {
             discList: [],
             apiUrl: 'server.php',
+            activeDisc: 0,
+            clicked: false,
         }
     },
 
@@ -16,6 +18,9 @@ createApp({
     },
 
     methods: {
-        
+        handlePreview(index) {
+            this.activeDisc = index;
+            this.clicked = true;
+        }
     },
 }).mount('#app');
